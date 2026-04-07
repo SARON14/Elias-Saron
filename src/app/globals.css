@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    --background: #ebebe9; /* Off-White/Light Grey */
+    --foreground: #1B261D; /* Dark Forest Green */
+    
+    --accent: #a1af98; /* Sage Green */
+    --muted-sage: #9ca39b; /* Muted Grey/Green */
+    --sand: #dcd2c6; /* Beige/Sand */
+    --gold: #dbbc90; /* Gold/Tan */
+    --off-white: #ebebe9;
+    --sepia: #433E3F; /* Warm Dark Grey for text */
+    
+    --light-green: #a1af98; 
+    --light-brown: #dcd2c6;
+
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
+  }
+
+  @theme inline {
+    --color-accent: var(--accent);
+    --color-gold: var(--gold);
+    --color-cream: var(--off-white);
+    --color-sepia: var(--sepia);
+    --color-sand: var(--sand);
+    --color-muted-sage: var(--muted-sage);
+    --color-light-green: var(--light-green);
+    --color-light-brown: var(--light-brown);
+    
+    /* Legacy Mappings */
+    --color-forest: var(--foreground);
+    --color-ivory: var(--off-white);
+    --color-sage: var(--accent);
+    --color-champagne: var(--gold);
+    
+    --font-heading: var(--font-heading);
+    --font-body: var(--font-body);
+  }
+}
+
+@layer base {
+  /*
+   * Lock light UI: `only light` in metadata/viewport opts out of forced dark
+   * (e.g. Chrome “Auto Dark Mode for Web Contents”). These rules back that up.
+   */
+  html {
+    color-scheme: only light;
+    background-color: var(--off-white);
+  }
+
+  body {
+    background-color: var(--off-white);
+    color: var(--sepia);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Reinforce when OS reports dark preference (some browsers still need explicit paint) */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: only light;
+    background-color: var(--off-white);
+  }
+
+  body {
+    background-color: var(--off-white);
+    color: var(--sepia);
+  }
+}
