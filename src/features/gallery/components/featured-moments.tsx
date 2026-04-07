@@ -59,6 +59,7 @@ export const FeaturedMoments = () => {
           <span className="mb-3 block text-xs font-bold uppercase tracking-[0.45em] text-accent">
             Featured Moments
           </span>
+          {/* Hi */}
           <h2 className="font-heading text-4xl text-sepia md:text-6xl">
             Timeless{" "}
             <span className="font-serif italic text-accent">Highlights</span>
