@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-
+export const runtime = 'edge';
 export async function GET() {
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
