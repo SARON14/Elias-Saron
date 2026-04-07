@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { isPhotoUploadEnabled } from "@/lib/site-dates";
 
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
+export const runtime = 'edge';
 
 export async function POST(request: Request) {
   if (!isPhotoUploadEnabled()) {
