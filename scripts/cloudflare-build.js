@@ -15,16 +15,46 @@ const items = fs.readdirSync(sourceDir);
 for (const item of items) {
     // Do not try to move the assets folder inside itself
     if (item === 'assets') continue;
+    if (item === '.build') continue; // Skip build cache if possible
 
     const srcPath = path.join(sourceDir, item);
+    const destPath = path.join(targetDir, item === 'worker.js' ? '_worker.js' : item);
 
-    if (item === 'worker.js') {
-        // Rename worker.js to _worker.js which Pages expects
-        fs.renameSync(srcPath, path.join(targetDir, '_worker.js'));
-    } else {
-        // Move dependencies (e.g. cloudflare, middleware, .build, etc)
-        fs.renameSync(srcPath, path.join(targetDir, item));
+    try {
+        if (fs.existsSync(destPath)) {
+            // Remove existing to avoid conflict if it's a directory
+            if (fs.lstatSync(destPath).isDirectory()) {
+                fs.rmSync(destPath, { recursive: true, force: true });
+            } else {
+                fs.unlinkSync(destPath);
+            }
+        }
+        fs.renameSync(srcPath, destPath);
+        console.log(`  - Moved ${item} -> ${path.basename(destPath)}`);
+    } catch (err) {
+        console.warn(`  ⚠️ Could not move ${item}: ${err.message}`);
     }
 }
 
-console.log('✅ Deployment structure completely ready at .open-next/assets');
+console.log('📝 Step 3: Generating _routes.json...');
+const routesConfig = {
+    version: 1,
+    include: ["/*"],
+    exclude: [
+        "/_next/static/*",
+        "/favicon.ico",
+        "/assets/*",
+        "/*.svg",
+        "/*.png",
+        "/*.jpg",
+        "/*.ico"
+    ]
+};
+
+fs.writeFileSync(
+    path.join(targetDir, '_routes.json'),
+    JSON.stringify(routesConfig, null, 2)
+);
+console.log('  - Created _routes.json with asset exclusions');
+
+console.log('\n✅ Deployment structure ready at .open-next/assets');

@@ -1,0 +1,9 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/telegram/test/route": "/api/telegram/test",
+  "/api/telegram/upload/route": "/api/telegram/upload",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/qr/page": "/qr"
+}

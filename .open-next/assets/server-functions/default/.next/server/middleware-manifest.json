@@ -1,0 +1,67 @@
+{
+  "version": 3,
+  "middleware": {},
+  "sortedMiddleware": [],
+  "functions": {
+    "/api/telegram/test/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/api/telegram/test/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_api_telegram_test_route_actions_1355daef.js",
+        "server/edge/chunks/node_modules_next_dist_esm_081a3f78._.js",
+        "server/edge/chunks/[root-of-the-server]__04458a80._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_0622f435.js"
+      ],
+      "name": "app/api/telegram/test/route",
+      "page": "/api/telegram/test/route",
+      "matchers": [
+        {
+          "regexp": "^/api/telegram/test(?:/)?$",
+          "originalSource": "/api/telegram/test"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "ZeAWX0XiisUka5hHutt32",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "DwTXvWnMTblYP/wlX7Dz51JKan5d1KbASt6QM81wgEY=",
+        "__NEXT_PREVIEW_MODE_ID": "7f954b6b61a622a66b89b7fdaa46dd2a",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "c303a553e3f461e0b088f071dc0851baadc28c81cd54d61d22693d2cb334a1d8",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "1013c7d4d2eb9396126f4a4f1c1b5f54d3dc25a22614a7674eed405518543ad9"
+      }
+    },
+    "/api/telegram/upload/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/api/telegram/upload/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_api_telegram_upload_route_actions_a1363dbc.js",
+        "server/edge/chunks/node_modules_next_dist_esm_b99a2f2a._.js",
+        "server/edge/chunks/[root-of-the-server]__04458a80._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_786cd98a.js"
+      ],
+      "name": "app/api/telegram/upload/route",
+      "page": "/api/telegram/upload/route",
+      "matchers": [
+        {
+          "regexp": "^/api/telegram/upload(?:/)?$",
+          "originalSource": "/api/telegram/upload"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "ZeAWX0XiisUka5hHutt32",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "DwTXvWnMTblYP/wlX7Dz51JKan5d1KbASt6QM81wgEY=",
+        "__NEXT_PREVIEW_MODE_ID": "7f954b6b61a622a66b89b7fdaa46dd2a",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "c303a553e3f461e0b088f071dc0851baadc28c81cd54d61d22693d2cb334a1d8",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "1013c7d4d2eb9396126f4a4f1c1b5f54d3dc25a22614a7674eed405518543ad9"
+      }
+    }
+  }
+}
