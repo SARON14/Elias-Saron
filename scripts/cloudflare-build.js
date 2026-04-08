@@ -15,7 +15,6 @@ const items = fs.readdirSync(sourceDir);
 for (const item of items) {
     // Do not try to move the assets folder inside itself
     if (item === 'assets') continue;
-    if (item === '.build') continue; // Skip build cache if possible
 
     const srcPath = path.join(sourceDir, item);
     const destPath = path.join(targetDir, item === 'worker.js' ? '_worker.js' : item);
