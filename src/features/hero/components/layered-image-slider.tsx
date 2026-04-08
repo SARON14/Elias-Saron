@@ -84,7 +84,7 @@ export const LayeredImageSlider = () => {
           ))}
         </motion.div>
       </AnimatePresence>
-      
+
       {/* Soft gradient overlay for text readability - lightened */}
       <div className="absolute inset-0 bg-gradient-to-b from-cream/20 via-transparent to-cream/60 z-10 pointer-events-none" />
       <div className="absolute inset-0 bg-cream/5 z-0 pointer-events-none" />
@@ -110,19 +110,19 @@ const LayeredImage = ({ image, mouseX, mouseY, floatIndex }: LayeredImageProps) 
   return (
     <motion.div
       initial={{ scale: 0.9, opacity: 0, rotate: image.rotate }}
-      animate={{ 
-        scale: 1, 
+      animate={{
+        scale: 1,
         opacity: 0.9, // Higher opacity for more visibility
         y: [0, -15, 0], // Floating motion
-          transition: {
-            opacity: { duration: 1, delay: image.delay * 0.5 },
-            scale: { duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
-            y: {
-              duration: FLOAT_DURATION[floatIndex % FLOAT_DURATION.length],
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }
+        transition: {
+          opacity: { duration: 1, delay: image.delay * 0.5 },
+          scale: { duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
+          y: {
+            duration: FLOAT_DURATION[floatIndex % FLOAT_DURATION.length],
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        }
       }}
       style={{
         position: "absolute",
